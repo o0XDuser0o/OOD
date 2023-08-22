@@ -1,0 +1,251 @@
+1.
+ณ เมืองแห่งหนึ่ง ที่มีชื่อว่า ... อืม (เอ้าผู้แต่งโจทย์คิดชื่อไม่ออก เอาเป็นว่าไม่ต้องสนใจก็ได้) จะมีบริการคมนาคมสาธารณะ ซึ่งเป็นสิ่งที่น้อง ๆ พี่ ๆ อาจารย์ ๆ หรือ 
+บุคคลอื่น ๆ ที่อาจจะคุณเคยกันหรือเคยนั้งก็มานั้นก็คือ "รถไฟฟ้า" นั้นเอง โดยแต่ละเมือง จะเปรียบเหมือน Node ของ Linked List นั้นเอง ซึ่งรถไฟฟ้าจะมีทั้งขาไปขากลับนั้นเอง
+และ รถไฟฟ้าขาไป ผ่านสถานีสุดท้ายของทางรถไฟฟ้าจะวนกลับมาสถานีแรก หรือในทางกลับกัน รถไฟฟ้าขากลับผ่านสถานีแรกก็จะวนกลับไปสถานีสุดท้ายเช่นกัน เพื่อให้ "พี่โบ๊ท" 
+ที่เป็นชาวเมืองนี้มีรถไฟฟ้านั้นไปทำงานหรือท่องเทียวในเมืองนี้ได้สะดวกขึ้น ต่อไปก็เป็นหน้าที่ของน้อง ๆ แล้วล่ะ ที่จะสานฝันให้เมืองนี้และ "พี่โบ๊ท" มี ระบบรถไฟฟ้าที่ 
+"สมบูรณ์แบบ" ที่สร้างขึ้นมาจากน้ำมือของน้องเองๆ 
+
+input จะเป็น
+บรรทัดแรก จะเป็น list ของ ชื่อสถาณี
+บรรทัดสอง จะเป็น สถานีต้นทาง,สถานีปลายทาง,ทิศทางของรถไฟฟ้า(ถ้าไม่ใส่ให้แสดงผลในขาที่ระยะทางสั้นที่สุด ถ้าเกิดเท่ากัน ให้แสดงผลลัพธ์ทั้งขาไปและขากลับ)
+โดย 
+	F จะเป็น รถไฟฟ้าขาไป
+	B จะเป็น รถไฟฟ้าขากลับ
+output จะเป็น
+แสดงการเดินทางของรถไฟฟ้า,จำนวนสถานีที่จะถึงปลายทาง
+
+2.
+ให้เขียนคลาสของ Doubly Linked List ซึ่งมีเมท็อดดังนี้
+1. __init__     สร้าง Head ขึ้นมาเพื่อบอกว่าจุดเริ่มต้นของ Linked List คือตรงไหน
+2. __str__     คืนค่าเป็นสตริงซึ่งบอกว่า Linked List เราตั้งแต่หัวไปจนท้ายมีตัวอะไรบ้าง
+3. reverse     คืนค่าเป็นสตริงซึ่งบอกว่า Linked List เราตั้งแต่ท้ายไปจนหัวมีตัวอะไรบ้าง
+4. isEmpty    เช็คว่า Linked List ของเราว่างหรือป่าว คืนค่าเป็น True / False
+5. append     add Item เข้า Linked List จากด้านหลัง ไม่คืนค่า
+6. addHead  add Item เข้า Linked List จากด้านหน้า ไม่คืนค่า
+7. search      ค้นหา Item ที่ต้องการใน Linked List คืนค่าเป็น Found / Not Found
+8. index        ค้นหา Item ที่ต้องการใน Linked List ว่าอยู่ที่ Index ไหน คืนค่าเป็น Index (0,1,2,3,4,.....) ถ้าหากไม่มีคืนค่าเป็น -1
+9. size           คืนค่าเป็นขนาดของ Linked List
+10. pop         นำ Item Index ที่ pos ออกจาก Linked List คืนค่าเป็น Success / Out of Range
+11. insert       เป็นการนำ Item ไปแทรกใน Linked List ตามตำแหน่ง pos ไม่มีการคืนค่า
+
+ถ้าน้องยังไม่ค่อยเข้าใจการทำงานของ insert ให้น้องลองกับ List บน Python ได้  เช่น
+1.  มี arr = [ 0 , 1 , 2 , 3 ] แล้วเรา arr.insert(0,"T") จะได้ผลลัพธ์คือ [ "T", 0 , 1 , 2 , 3 ]
+2.  มี arr = [ 0 , 1 , 2 , 3 ] แล้วเรา arr.insert(999,"T") จะได้ผลลัพธ์คือ [ 0 , 1 , 2 , 3 , "T" ]
+3.  มี arr = [ 0 , 1 , 2 , 3 ] แล้วเรา arr.insert(-2,"T") จะได้ผลลัพธ์คือ [ 0 , 1 , "T" , 2 , 3 ]  
+4.  มี arr = [ 0 , 1 , 2 , 3 ] แล้วเรา arr.insert(-10,"T") จะได้ผลลัพธ์คือ [ "T", 0 , 1 , 2 , 3 ]
+
+โดยรูปแบบ Input มีดังนี้
+1. append    ->  AP
+2. addHead  ->  AH
+3. search      ->  SE
+4. index        ->   ID
+5. size          ->   SI
+6. pop          ->   PO
+7. insert       ->   IS
+
+โดยให้เพิ่มเติมจากส่วน #Code Here ของโปรแกรมต่อไปนี้ เพื่อให้สามารถแสดงผลได้ตามที่โจทย์กำหนด
+********  ห้ามใช้ List ในการทำ Linked List เด็ดขาดถ้าหากพบจะถูกลดเป็น 0 คะแนน ********
+
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.next = None
+        self.previous = None
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
+        self.tail = None
+
+    def __str__(self):
+        if self.isEmpty():
+            return "Empty"
+        cur, s = self.head, str(self.head.value) + " "
+        while cur.next != None:
+            s += str(cur.next.value) + " "
+            cur = cur.next
+        return s
+
+    def reverse(self):
+        if self.isEmpty():
+            return "Empty"
+        cur, s = self.tail, str(self.tail.value) + " "
+        while cur.previous != None:
+            s += str(cur.previous.value) + " "
+            cur = cur.previous
+        return s
+
+    def isEmpty(self):
+        return self.head == None
+
+    def append(self, item):
+        #Code Here
+
+    def addHead(self, item):
+        #Code Here
+
+    def insert(self, pos, item):
+        #Code Here
+
+    def search(self, item):
+        #Code Here
+
+    def index(self, item):
+        #Code Here
+
+    def size(self):
+        #Code Here
+
+    def pop(self, pos):
+        #Code Here
+
+L = LinkedList()
+inp = input('Enter Input : ').split(',')
+for i in inp:
+    if i[:2] == "AP":
+        L.append(i[3:])
+    elif i[:2] == "AH":
+        L.addHead(i[3:])
+    elif i[:2] == "SE":
+        print("{0} {1} in {2}".format(L.search(i[3:]), i[3:], L))
+    elif i[:2] == "SI":
+        print("Linked List size = {0} : {1}".format(L.size(), L))
+    elif i[:2] == "ID":
+        print("Index ({0}) = {1} : {2}".format(i[3:], L.index(i[3:]), L))
+    elif i[:2] == "PO":
+        before = "{}".format(L)
+        k = L.pop(int(i[3:]))
+        print(("{0} | {1}-> {2}".format(k, before, L)) if k == "Success" else ("{0} | {1}".format(k, L)))
+    elif i[:2] == "IS":
+        data = i[3:].split()
+        L.insert(int(data[0]), data[1])
+print("Linked List :", L)
+print("Linked List Reverse :", L.reverse())
+
+3.
+จากการหา portal ในคราวก่อน น้องๆมอง "เขียนสวยๆกะทัดรัด ไม่งั้นจะส่งกลับไปเขียนใหม่" เป็นแค่ประโยคขู่เปล่าๆ ดังนั้นในข้อนี้จึงไม่มีข้อบังคับ 
+แค่แลกมากับความยากนิดหน่อย ใช้ความขี้โกงของ python ให้เต็มที่ พี่ซันฟงไม่ได้ติดในฝัน ไม่มีนิยายให้อ่าน แต่รอบนี้พี่ต้องการโปรแกรมที่มีรายละเอียดดังนี้
+
+Input
+การเชื่อมต่อของ node แทนด้วย '>' ซึ่งแต่ละการเชื่อมต่อจะขั้นด้วย ','
+รับประกันว่าจะไม่มีการ reassign node.next
+หมายถึงจะไม่มี input แบบนี้: 1>2,1>3
+
+Output
+แสดงตัว node ที่ linked list เชื่อมเข้าหากัน (เรียงค่าจากน้อยไปมาก)
+แสดงค่าและขนาด (ความยาว) ของ node นั้น โดยขนาดนับเริ่มตั้งแต่ตัวมันเองจนถึงตัวสุดท้ายหรือเจอตัวซ้ำ
+หากไม่มีให้แสดงว่า "No intersection"
+หากมี intersection ให้นำ node ที่เป็น intersection ออกไป แล้วนำ linked list ที่ไม่ใช่ circular มาเรียงใส่สลับกัน
+
+อธิบาย test case 1
+Input: 1>2,2>3,6>7,7>3,4>5,3>4
+
+linked list ที่ได้จะมีลักษณะแบบนี้
+  6 → 7 ↴
+1 → 2 → 3 → 4 → 5
+
+intersection คือ 3
+linked list ที่มี 3 เป็น head คือ 3 → 4 → 5
+ทำให้ขนาดมีค่าเท่ากับ 3
+จึงพิมพ์ Node(3, size=3) ออกมา
+ต่อไปนำ node 3 ออกจะได้
+  6 → 7 ↴
+1 → 2 →   → 4 → 5
+นำ linked list มาเรียงใหม่ (เรียงด้วยค่าของ head จากน้อยไปมาก)
+1 → 2
+4 → 5
+6 → 7
+จากนั้นก็นำ linked list มา merge แบบสลับกันจะได้
+1 → 4 → 6 → 2 → 5 → 7
+
+Output ที่ได้ก็จะมี 3 บรรทัดคือ
+Node(3, size=3)
+Delete intersection then swap merge:
+1 -> 4 -> 6 -> 2 -> 5 -> 7
+
+4.
+Linked list แบบ 2D ที่มีลักษณะดังรูปตาม link ด้านล่างนี้
+
+https://stackoverflow.com/questions/33836151/how-do-you-compare-two-values-of-the-same-generic-type-in-java
+
+*** โดยที่ pri_node จะไม่ซ้ำกันเลย จะไม่สามารถเพิ่ม node นั้นได้ ***
+
+จงสร้าง 2D linkedlist ที่มีโครงสร้างตามตัวอย่างด้านล่าง และ เพิ่มเมทอด ต่อไปนี้ให้สมบูรณ์
+โดย 1. ADN  : add pri_node คือการเพิ่ม primary node
+       2. ADSN : add sec_node คือการเพิ่ม secondary node
+class node:
+    def __init__(self,data):
+        *** code ***
+class Snode:
+    def __init__(self,data):
+        *** code ***
+class link:
+    def __init__(self):
+        *** code ***
+    def next_node(self,data):
+        *** code ***
+    def search(self,data):
+        *** code ***
+    def next_secondary_node(self,n,data):
+        *** code ***
+    def show_all(self):
+        *** code ***
+โดยให้ทำงานตามคำสั่งดังต่อไปนี้ และแสดงผลดังตัวอย่าง
+inp = input("input : ").split(",")
+l = link()
+for i in inp:
+    u = i.split(" ")
+    if u[0] == "ADN":
+        l.next_node(node(u[1]))
+    elif u[0] == "ADSN":
+        h = u[1].split("-")
+        l.next_secondary_node(h[0],Snode(h[1]))
+l.show_all()
+
+5.
+เขียนโปรแกรมคลุกคำ (scramble) สร้าง singly linked list ของคำในจดหมาย scramble จดหมายโดยทำคล้ายตัด ไพ่และกรีดไพ่ ผู้รับจดหมาย descramble 
+กรีดกลับและตัดกลับจนได้จดหมายฉบับเดิมที่อ่านได้(หากออกแบบดีๆ สามารถ scramble กี่ครั้งก็ได้ ขึ้นแรกให้ทำ ครั้งเดียวก่อน)  
+
+***** รูปแบบ input *****
+
+แบ่งเป็น 2 ฝั่ง ได้แก่ ฝั่งซ้าย (Linked List เริ่มต้น  ความยาวขั้นต่ำของ Linked List รับประกันว่าขั้นต่ำคือ 10)  |  ฝั่งขวา BottomUp กับ Riffle โดยการแทนด้วย 
+B กับ R ซึ่งการรับ R กับ B สามารถสลับที่กันได้ เช่น   R 40,B 60  <->  B 60,R 40
+
+1.  B   < percentage >  :  bottomUp ตัด ยกส่วนบน (lift) ออกตาม % input ที่รับเข้ามา นำส่วนล่างมาซ้อนทับส่วนบน
+
+2.  R   < percentage >  :  riffleShuffle กรีด (จากด้านบน) lift ตาม % นำ node ของแต่ละลิสต์มาสลับกันทีละ node จากต้นลิสต์ ส่วนเกินนำมาต่อท้าย
+
+***** ถ้าหากคิดเปอร์เซ็นของความยาว Linked List แล้วได้ทศนิยม ให้ปัดลงทั้งหมด *****
+
+***** การแสดงผลมี Pattern เป็น   Bottomup  ->  Riffle  ->  Deriffle  -> Debottomup นะครับ
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.next = None
+
+    def __str__(self):
+        return str(self.value)
+
+def createLL(LL):
+    # Code Here
+
+def printLL(head):
+    # Code Here
+
+def SIZE(head):
+    # Code Here
+
+def scarmble(head, b, r, size):
+    # Code Here
+
+inp1, inp2 = input('Enter Input : ').split('/')
+print('-' * 50)
+h = createLL(inp1.split())
+for i in inp2.split('|'):
+    print("Start : {0}".format(printLL(h)))
+    k = i.split(',')
+    if k[0][0] == "B" and k[1][0] == "R":
+        scarmble(h, float(k[0][2:]), float(k[1][2:]), SIZE(h))
+    elif k[0][0] == "R" and k[1][0] == "B":
+        scarmble(h, float(k[1][2:]), float(k[0][2:]), SIZE(h))
+    print('-' * 50)

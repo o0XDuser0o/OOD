@@ -73,7 +73,7 @@ while not customer_list.isEmpty() or not bar1.isEmpty() or not bar2.isEmpty():
     elif bar2_out == 1:
         print("Time",time,"customer",person2,"get coffee")
         bar2_out = 0
-    while not customer_list.isEmpty() and customer_list.peek()[1] <= time:
+    while not customer_list.isEmpty() and customer_list.peek()[1] == time:
         q.enqueue(customer_list.dequeue())
     while not q.isEmpty() and (bar1.isEmpty() or bar2.isEmpty()):
         print
