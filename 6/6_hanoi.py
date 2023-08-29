@@ -1,17 +1,17 @@
 #code by korphai
 
-def move(n,A,B,C,maxn):
+def move(n,fromt,waitt,tot,maxn):
     if n == 1:
-        C[0].append(A[0].pop())
-        print(f'move {n} from  {A[1]} to {C[1]}')
+        tot[0].append(fromt[0].pop())
+        print(f'move {n} from  {fromt[1]} to {tot[1]}')
         printHanoi(maxn)
         return
-    move(n-1,A,C,B,maxn)
-    trans = A[0].pop()
-    C[0].append(trans)
-    print(f'move {n} from  {A[1]} to {C[1]}')
+    move(n-1,fromt,tot,waitt,maxn)
+    trans = fromt[0].pop()
+    tot[0].append(trans)
+    print(f'move {n} from  {fromt[1]} to {tot[1]}')
     printHanoi(maxn)
-    move(n-1,B,A,C,maxn)
+    move(n-1,waitt,fromt,tot,maxn)
 
 def beginning_harnoid(n, char):
     if n <= 0:

@@ -25,5 +25,7 @@
 #         move(n-1,B,C,A)
 
 # move(5,'A','B','C')
-num = 5
-print(str(bin(2)[2:]).rjust(num,"0"))
+
+# num = 5
+# print(str(bin(2)[2:]).rjust(num,"0"))
+
