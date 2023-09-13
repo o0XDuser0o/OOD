@@ -1,0 +1,91 @@
+1.
+ให้น้องรับ input แล้วนำ input นั้นมาสร้าง Binary Search Tree โดย input ตัวแรกสุดจะเป็น Root เสมอ
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.left = None
+        self.right = None
+    
+    def __str__(self):
+        return str(self.data)
+
+class BST:
+    def __init__(self):
+        self.root = None
+
+    def insert(self, data):
+        # Code Here
+    
+    def printTree(self, node, level = 0):
+        if node != None:
+            self.printTree(node.right, level + 1)
+            print('     ' * level, node)
+            self.printTree(node.left, level + 1)
+
+T = BST()
+inp = [int(i) for i in input('Enter Input : ').split()]
+for i in inp:
+    root = T.insert(i)
+T.printTree(root)
+
+2.
+ให้น้องรับ input แล้วนำ input นั้นมาสร้าง Binary Search Tree โดย input ตัวแรกสุดจะเป็น Root เสมอ
+จากนั้นหาความสูงของ Binary Search Tree  นั้น
+
+3.
+รอบนี้พี่ซันฟงใจดี ห่วงว่าน้องๆจะทำโจทย์จนสมองไหม้ไปซะก่อนพี่เลยมีโจทย์ง่า่ยๆให้ทำ (｀▽´)
+หาเส้นทางที่ให้ค่ามากที่สุดจาก tree ที่กำหนดให้โดย tree อยู่ในรูปแบบของ list
+อธิบาย test case 1
+Input: 0 1 2 3 4 5 6
+Tree:
+      0
+   /      \ 
+  1       2
+ /  \     /  \ 
+3   4 5   6
+เส้นทางที่มากที่สุดจึงเป็น 0 2 6 ดังนั้น output ก็จะได้
+Maximum path: [0, 2, 6]
+
+4.
+ให้น้องรับ input แล้วนำ input นั้นมาสร้าง Binary Search Tree โดย input ตัวแรกสุดจะเป็น Root เสมอ
+โดยมีการป้อน input ดังนี้
+i <int> = insert data
+d <int> = delete data
+หมายเหตุ การลบนั้นจะใช้หลักการของ Inorder Successor และ จำนวน parameter มีได้มากสุด 3 ตัว
+class Node:
+    def __init__(self, data): 
+        self.data = data  
+        self.left = None  
+        self.right = None 
+        self.level = None 
+
+    def __str__(self):
+        return str(self.data) 
+
+class BinarySearchTree:
+    def __init__(self): 
+        self.root = None
+
+    def insert(self, val):  
+        #code here
+    def delete(self,r, data):
+        #code here
+                
+def printTree90(node, level = 0):
+    if node != None:
+        printTree90(node.right, level + 1)
+        print('     ' * level, node)
+        printTree90(node.left, level + 1)
+
+
+tree = BinarySearchTree()
+data = input("Enter Input : ").split(",")
+#code here
+
+5.
+ปริ้นต้นไม้ BST เป็นแนวนอน          ที่ครูสอนพี่ฟงนั้นขัดใจ
+อยากให้น้องทำใหม่ช่วยแก้ไข        ให้ต้นไม้ตั้งตรงแตกกิ่งได้
+เลขวรรคขั้นสำหรับข้อมูลรับ            แนะว่านับจำนวนให้ดีไว้
+ทำออกมาให้สวยงามประทับใจ       กฤษฎาอยู่ในป่ายังเชยชม
+
+*วนลูป insert เลขทีละตัวเข้า tree ตามปกติ < อยู่ซ้าย, >= อยู่ขวา

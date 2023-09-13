@@ -1,2 +1,2 @@
-why = Not my code
+what = Not my code
 my = my code
