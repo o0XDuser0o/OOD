@@ -22,7 +22,7 @@ def move(ori,des,maxpole):
     printpole(maxpole)
     return ori,des
 
-def hanoi(n,ori,des,pole,maxp):
+def hanoi(n,ori,des,pole,maxp): #ori = origin des = destinstion pole = เสาที่ไม่ใช้
     if n == 1:
         ori,des = move(ori,des,maxp)
         return ori,des,pole

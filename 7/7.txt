@@ -27,10 +27,20 @@ inp = [int(i) for i in input('Enter Input : ').split()]
 for i in inp:
     root = T.insert(i)
 T.printTree(root)
+test case:
+Enter Input : 10 4 20 1 5
+      20
+ 10
+           5
+      4
+           1
 
 2.
 ให้น้องรับ input แล้วนำ input นั้นมาสร้าง Binary Search Tree โดย input ตัวแรกสุดจะเป็น Root เสมอ
 จากนั้นหาความสูงของ Binary Search Tree  นั้น
+test case:
+Enter Input : 3 5 2 1 4 6 7
+Height of this tree is : 3
 
 3.
 รอบนี้พี่ซันฟงใจดี ห่วงว่าน้องๆจะทำโจทย์จนสมองไหม้ไปซะก่อนพี่เลยมีโจทย์ง่า่ยๆให้ทำ (｀▽´)
@@ -45,6 +55,9 @@ Tree:
 3   4 5   6
 เส้นทางที่มากที่สุดจึงเป็น 0 2 6 ดังนั้น output ก็จะได้
 Maximum path: [0, 2, 6]
+test case:
+Enter tree: 0 1 2 3 4 5 4
+Maximum path: [0, 2, 5]
 
 4.
 ให้น้องรับ input แล้วนำ input นั้นมาสร้าง Binary Search Tree โดย input ตัวแรกสุดจะเป็น Root เสมอ
@@ -81,6 +94,46 @@ def printTree90(node, level = 0):
 tree = BinarySearchTree()
 data = input("Enter Input : ").split(",")
 #code here
+test case:
+Enter Input : d 1,i 1,d 1,i 0,i 2,i 4,i 1,i 5,i 3,d 2
+delete 1
+Error! Not Found DATA
+insert 1
+ 1
+delete 1
+insert 0
+ 0
+insert 2
+      2
+ 0
+insert 4
+           4
+      2
+ 0
+insert 1
+           4
+      2
+           1
+ 0
+insert 5
+                5
+           4
+      2
+           1
+ 0
+insert 3
+                5
+           4
+                3
+      2
+           1
+ 0
+delete 2
+                5
+           4
+      3
+           1
+ 0
 
 5.
 ปริ้นต้นไม้ BST เป็นแนวนอน          ที่ครูสอนพี่ฟงนั้นขัดใจ
@@ -89,3 +142,16 @@ data = input("Enter Input : ").split(",")
 ทำออกมาให้สวยงามประทับใจ       กฤษฎาอยู่ในป่ายังเชยชม
 
 *วนลูป insert เลขทีละตัวเข้า tree ตามปกติ < อยู่ซ้าย, >= อยู่ขวา
+test case:
+Enter input: 100 120 110 110 130 90 60 70 75 74 76
+                  100                
+                 /   \________       
+               90             120    
+  ____________/          ____/   \   
+60                    110         130
+  \                      \           
+   70                     110        
+     \___                            
+         75                          
+        /  \                         
+      74    76      

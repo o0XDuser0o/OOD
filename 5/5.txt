@@ -13,6 +13,10 @@ input จะเป็น
 	B จะเป็น รถไฟฟ้าขากลับ
 output จะเป็น
 แสดงการเดินทางของรถไฟฟ้า,จำนวนสถานีที่จะถึงปลายทาง
+test case:
+***Railway on route***
+Input Station name/Source, Destination, Direction(optional): A,B,C,D,E,F,G/C,G,F
+Forward Route: C->D->E->F->G,4
 
 2.
 ให้เขียนคลาสของ Doubly Linked List ซึ่งมีเมท็อดดังนี้
@@ -121,6 +125,19 @@ for i in inp:
         L.insert(int(data[0]), data[1])
 print("Linked List :", L)
 print("Linked List Reverse :", L.reverse())
+test case:
+Enter Input : SI,IS 0 KMITL,SI,SE 0,SE KMITL,ID 0,ID KMITL,PO 0,SI,IS -999 CE,SI
+Linked List size = 0 : Empty
+Linked List size = 1 : KMITL 
+Not Found 0 in KMITL 
+Found KMITL in KMITL 
+Index (0) = -1 : KMITL 
+Index (KMITL) = 0 : KMITL 
+Success | KMITL -> Empty
+Linked List size = 0 : Empty
+Linked List size = 1 : CE 
+Linked List : CE 
+Linked List Reverse : CE 
 
 3.
 จากการหา portal ในคราวก่อน น้องๆมอง "เขียนสวยๆกะทัดรัด ไม่งั้นจะส่งกลับไปเขียนใหม่" เป็นแค่ประโยคขู่เปล่าๆ ดังนั้นในข้อนี้จึงไม่มีข้อบังคับ 
@@ -162,6 +179,13 @@ Output ที่ได้ก็จะมี 3 บรรทัดคือ
 Node(3, size=3)
 Delete intersection then swap merge:
 1 -> 4 -> 6 -> 2 -> 5 -> 7
+test case:
+Enter edges: 5>2,1>4,2>1,6>7,4>0,7>4,8>2,0>1
+Node(1, size=3)
+Node(2, size=4)
+Node(4, size=3)
+Delete intersection then swap merge:
+0 -> 5 -> 6 -> 8 -> 7
 
 4.
 Linked list แบบ 2D ที่มีลักษณะดังรูปตาม link ด้านล่างนี้
@@ -201,6 +225,12 @@ for i in inp:
         h = u[1].split("-")
         l.next_secondary_node(h[0],Snode(h[1]))
 l.show_all()
+test case:
+input : ADN A,ADN B,ADN C,ADN D,ADSN A-A1,ADN A
+A : A1,
+B : 
+C : 
+D : 
 
 5.
 เขียนโปรแกรมคลุกคำ (scramble) สร้าง singly linked list ของคำในจดหมาย scramble จดหมายโดยทำคล้ายตัด ไพ่และกรีดไพ่ ผู้รับจดหมาย descramble 
@@ -249,3 +279,24 @@ for i in inp2.split('|'):
     elif k[0][0] == "R" and k[1][0] == "B":
         scarmble(h, float(k[1][2:]), float(k[0][2:]), SIZE(h))
     print('-' * 50)
+test case:
+Enter Input : 1 2 3 4 5 6 7 8 9 10/B 30,R 60|B 50,R 50|R 62,B 23
+--------------------------------------------------
+Start : 1 2 3 4 5 6 7 8 9 10
+BottomUp 30.000 % : 4 5 6 7 8 9 10 1 2 3
+Riffle 60.000 % : 4 10 5 1 6 2 7 3 8 9
+Deriffle 60.000 % : 4 5 6 7 8 9 10 1 2 3
+Debottomup 30.000 % : 1 2 3 4 5 6 7 8 9 10
+--------------------------------------------------
+Start : 1 2 3 4 5 6 7 8 9 10
+BottomUp 50.000 % : 6 7 8 9 10 1 2 3 4 5
+Riffle 50.000 % : 6 1 7 2 8 3 9 4 10 5
+Deriffle 50.000 % : 6 7 8 9 10 1 2 3 4 5
+Debottomup 50.000 % : 1 2 3 4 5 6 7 8 9 10
+--------------------------------------------------
+Start : 1 2 3 4 5 6 7 8 9 10
+BottomUp 23.000 % : 3 4 5 6 7 8 9 10 1 2
+Riffle 62.000 % : 3 9 4 10 5 1 6 2 7 8
+Deriffle 62.000 % : 3 4 5 6 7 8 9 10 1 2
+Debottomup 23.000 % : 1 2 3 4 5 6 7 8 9 10
+--------------------------------------------------

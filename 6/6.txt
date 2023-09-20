@@ -14,10 +14,16 @@ n = int(input("Enter Input : "))
 
 print1ToN(n)
 printNto1(n)
+test case:
+Enter Input : 6
+1 2 3 4 5 6 6 5 4 3 2 1 
 
 2.
 ****** ห้ามใช้ For , While  ( ให้ฝึกเอาไว้ เนื่องจากถ้าเจอตอนสอบจะได้ 0 )
 เขียน Recursive เพื่อหาว่า String ที่รับเข้ามาเป็น Palindrome หรือไม่
+test case:
+Enter Input : abgba
+'abgba' is palindrome
 
 3.
 เขียนโปรแกรมสำหรับหา หรม. ของเลข 2 ตัว
@@ -25,6 +31,9 @@ printNto1(n)
 หมายเหตุ ฟังก์ชันต้องมี parameter แค่เพียง 2 ตัว
 บทนิยาม
 ตัวหารร่วมมาก หรือ ห.ร.ม. (อังกฤษ: greatest common divisor: gcd) ของจำนวนเต็มสองจำนวนซึ่งไม่เป็นศูนย์พร้อมกัน คือจำนวนเต็มที่มากที่สุดที่หารทั้งสองจำนวนลงตัว
+test case:
+Enter Input : -24 -36
+The gcd of -24 and -36 is : 12
 
 4.
 ****** ห้ามใช้ For , While  ( ให้ฝึกเอาไว้ เนื่องจากถ้าเจอตอนสอบจะได้ 0 ) ******
@@ -39,6 +48,18 @@ printNto1(n)
 
 ****** Output ******
 รับประกันว่ากฤษฎาจะซื้อของได้อย่างน้อย 1 pattern
+test case:
+Enter Input (Money, Product) : 20/20 10 5 5 3 2 20 10
+20
+10 5 5
+10 5 3 2
+10 5 3 2
+10 10
+5 5 10
+5 3 2 10
+5 3 2 10
+20
+Krisada can purchase Product: [20, 10, 5, 5, 3, 2, 20, 10] with: 20 Baht | 9 Pattern
 
 5.
 เขียนโปรแกรมที่แสดงผลดังตัวอย่าง
@@ -48,3 +69,12 @@ def staircase(n):
     #code here
 
 print(staircase(int(input("Enter Input : "))))
+test case:
+Enter Input : 7
+______#
+_____##
+____###
+___####
+__#####
+_######
+#######

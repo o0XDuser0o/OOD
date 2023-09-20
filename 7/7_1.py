@@ -26,18 +26,6 @@ class BST:
             print('     ' * level, node)
             self.printTree(node.left, level + 1)
 
-    def treelevel(self,node,level = 0):
-        if node == None:
-            return level
-        level += 1
-        right = self.treelevel(node.right,level)
-        left = self.treelevel(node.level,level)
-        if right > left:
-            return right
-        elif right < left:
-            return left
-        return right
-
 T = BST()
 inp = [int(i) for i in input('Enter Input : ').split()]
 for i in inp:
