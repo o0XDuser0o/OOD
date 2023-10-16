@@ -28,4 +28,44 @@
 
 # num = 5
 # print(str(bin(2)[2:]).rjust(num,"0"))
+# lst = list(map(int,input().split()))
+# print(sum(lst))
+def verify_pw(pw):
+    # YOUR CODE HERE
+    password = str(pw)
+    Big_alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    small_alphabet = 'abcdefghijklmnopqrstuvwxyz'
+    number = '0123456789'
+    specailcharacter = ' @ $'
+    lst = []
+
+    if len(password) < 8 :
+        lst.append(1)
+    for i in password:
+        if i in Big_alphabet:
+            break
+    else:
+        lst.append(2)
+    for i in password:
+        if i in small_alphabet:
+            break
+    else:
+        lst.append(3)
+    for i in password:
+        if i in number:
+            break
+    else:
+        lst.append(4)
+    for i in password:
+        if i in specailcharacter:
+            lst.append(0)
+            break
+    else:
+        lst.append(5)
+
+    return lst
+print(verify_pw(1234))
+result = verify_pw("ireur32")
+print(len(verify_pw("ireur32")))
+print(result)
 
